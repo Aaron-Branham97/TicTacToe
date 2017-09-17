@@ -35,6 +35,7 @@ public class TicTacToe {
             controller.controlModel();
             
         }
+		
         
         /* Game is over; show the final board and the winner */
 

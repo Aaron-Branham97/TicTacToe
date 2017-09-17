@@ -142,6 +142,7 @@ public class TicTacToeModel{
         /* Return mark from the square at the specified location */
         
         /* INSERT YOUR CODE HERE */
+		
 
         return grid[row][col]; /* remove this line! */
             
@@ -154,8 +155,19 @@ public class TicTacToeModel{
            value */
         
         /* INSERT YOUR CODE HERE */
+		
+		if (isMarkWin(Mark.X)) {
+			return Result.X;
+		}
+		else if (isMarkWin(Mark.O)) {
+			return Result.O;
+		}
+		else if (isTie()) {
+			return Result.TIE;
+		}
+		
 
-        return null; /* remove this line! */
+        else return Result.NONE; /* remove this line! */
 
     }
 	
@@ -165,9 +177,47 @@ public class TicTacToeModel{
            winner */
         
         /* INSERT YOUR CODE HERE */
-		for (int i = 0; i < width)
+		int firstDiagCounter = 0;
+		int secondDiagCounter = 0;
+		int rowCounter = 0;
+		int colCounter = 0;
+		for (int i = 0; i < width; i++) {
+			int forCounter = 0;
+			for (int j = 0; j < width; j++) {
+				if (getMark(i,j) == mark) {
+					forCounter++;
+				}
+				if (forCounter == width) {
+					rowCounter = forCounter;
+				}
+			}
+		}
+		for (int i = 0; i < width; i++) {
+			int forCounter = 0;
+			for (int j = 0; j < width; j++) {
+				if (getMark(j,i) == mark) {
+					forCounter++;
+				}
+				if (forCounter == width) {
+					colCounter = forCounter;
+				}
+			}
+		}
+		for (int i = 0; i < width; i++) {
+			if (getMark(i,i) == mark) {
+				firstDiagCounter++;
+			}
+		}
+		for (int i = 0; i < width; i++) {
+			if (getMark(i,width - 1 - i) == mark) {
+				secondDiagCounter++;
+			}
+		}
+		if (firstDiagCounter == width || secondDiagCounter == width || rowCounter == width || colCounter == width ) {
+			return true;
+		}
 
-        return false; /* remove this line! */
+        else return false; /* remove this line! */
 
     }
 	
@@ -176,8 +226,15 @@ public class TicTacToeModel{
         /* Check the squares of the board to see if the game is a tie */
 
         /* INSERT YOUR CODE HERE */
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < width; j++) {
+				if (getMark(i,j) == Mark.EMPTY) {
+					return false;
+				}
+			}
+		}
 
-        return false; /* remove this line! */
+        return true; /* remove this line! */
         
     }
 
