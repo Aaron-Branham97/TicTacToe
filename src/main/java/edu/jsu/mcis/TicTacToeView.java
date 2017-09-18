@@ -52,7 +52,7 @@ public class TicTacToeView {
 		}
 
         /* INSERT YOUR CODE HERE */
-		System.out.println("Enter the row and column numbers, separated by a space: ");
+		System.out.print("Enter the row and column numbers, separated by a space: ");
 
     }
 
