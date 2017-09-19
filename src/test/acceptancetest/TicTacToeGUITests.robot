@@ -22,7 +22,7 @@ Winner Should Be    [Arguments]     ${winner}
     
 *** Test Cases ***
 Win Diagonally as X
-    Start New Game
+	Start New Game
     Mark Location       1   1
     Check Location      1   1   X
     Mark Location       0   1

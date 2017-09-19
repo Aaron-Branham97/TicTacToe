@@ -5,8 +5,8 @@ public class TicTacToeModel{
     private static final int DEFAULT_WIDTH = 3;
     
     /* Mark (represents X, O, or an empty square */
-    
-    public enum Mark {
+	
+	public enum Mark {
         
         X("X"), 
         O("O"), 
@@ -32,7 +32,7 @@ public class TicTacToeModel{
         
         X("X"), 
         O("O"), 
-        TIE("Tie"), 
+        TIE("TIE"), 
         NONE("none");
 
         private String message;

@@ -27,7 +27,6 @@ public class TicTacToeController {
         
         /* Prompt player for next move using view's showNextMovePrompt() */
         
-        view.showNextMovePrompt();
         
         /* Receive and validate input, which should be read at the keyboard as
            two integers, the row and the column (for example, "1 1" for the
